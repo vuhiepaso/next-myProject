@@ -2,6 +2,7 @@
 import { Layout } from 'antd'
 import { Footer } from '../common/footer'
 import { HeaderDashboard } from '../common/header'
+import Menu from '../common/menu'
 
 export default function DashboardLayout({
   children,
@@ -12,6 +13,9 @@ export default function DashboardLayout({
     <>
       <Layout>
         <HeaderDashboard />
+        <nav>
+          <Menu />
+        </nav>
         <Layout.Content>
           <div>{children}</div>
         </Layout.Content>
