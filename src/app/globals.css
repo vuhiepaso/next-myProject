@@ -1,8 +1,16 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  background-color: #00152912;
+}
 body {
+    
 
 }
+

@@ -1,14 +1,9 @@
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+import AuthLayout from '@/components/layouts/layoutAuth'
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <header>login or register</header>
-      <nav>this is slot nav</nav>
-      {children}
-      <footer>contact info</footer>
+      <AuthLayout>{children}</AuthLayout>
     </>
   )
 }
