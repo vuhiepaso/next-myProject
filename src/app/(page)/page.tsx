@@ -1,23 +1,19 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { Button } from 'antd'
 import CarouselH from '@/components/home/Carousel'
+import Banner from '@/components/banner'
+import AirConditional from '@/components/banner/airConditional'
+import Videos from '@/components/banner/video'
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
-  // useEffect only runs on the client, so now we can safely show the UI
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    // use your loading page
-    return <div className='hidden'></div>
-  }
+  const elements = [
+    <Banner key={'Banner'} />,
+    <Videos key={'Videos'} />,
+    <AirConditional key={'AirConditional'} />,
+    <>4</>,
+  ]
   return (
     <div>
-      <CarouselH></CarouselH>
+      <CarouselH elements={elements} />
     </div>
   )
 }

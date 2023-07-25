@@ -1,14 +1,7 @@
 import React from 'react'
 import { Carousel } from 'antd'
+import styled from 'styled-components'
 
-const contentStyle: React.CSSProperties = {
-  margin: '0 0 2px 0',
-  height: '80vh',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-}
 const settings = {
   dots: true,
   infinite: true,
@@ -16,30 +9,58 @@ const settings = {
   slidesToScroll: 1,
   vertical: true,
   verticalSwiping: true,
-  autoplay: true,
+  // autoplay: true,
 }
 
-const CarouselH: React.FC = () => {
+type ICarousel = {
+  elements: React.JSX.Element[]
+}
+
+const CarouselH = ({ elements }: ICarousel) => {
   const onChange = (currentSlide: number) => {
     console.log(currentSlide)
   }
 
   return (
-    <Carousel {...settings} afterChange={onChange}>
-      <div>
-        <h3 style={contentStyle}>1</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
-      </div>
-    </Carousel>
+    <Template>
+      <Carousel {...settings} afterChange={onChange}>
+        {elements &&
+          elements.map((element, index) => (
+            <div key={index}>
+              <div className='box-item'>{element}</div>
+            </div>
+          ))}
+      </Carousel>
+    </Template>
   )
 }
-
 export default CarouselH
+// STYLE
+const Template = styled.div`
+  .slick-dots {
+    position: fixed;
+    margin-left: 10px;
+    min-height: 300px;
+  }
+  .slick-dots li {
+    height: 60px !important;
+  }
+  .slick-dots li button {
+    height: 60px !important;
+    background-color: #727479;
+    width: 30px;
+  }
+  .slick-dots li button::after {
+    margin-top: 1px;
+    background-color: #3a3a3a;
+  }
+  .box-item {
+    margin: 0 0 2px 0;
+    height: 80vh;
+    color: #fff;
+    text-align: center;
+    background: #9ea1a8;
+    /* border-radius: 4rem; */
+    /* padding: 2%; */
+  }
+`
