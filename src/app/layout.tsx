@@ -1,5 +1,5 @@
 'use client'
-import '../style/globals.css'
+import '../style/globals.scss'
 type Props = {
   children: React.ReactNode
 }

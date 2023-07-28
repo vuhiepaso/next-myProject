@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 function AirConditional() {
   return (
     <Template>
@@ -7,7 +8,10 @@ function AirConditional() {
         <h2 className='text-3xl'>Name </h2>
         <div>This is ...</div>
         <div>Description this is ...</div>
-        <button className='btn-banner mt-4'>Go Now</button>
+
+        <button className='btn-banner mt-4'>
+          <Link href='/login'>Go To Login Now</Link>
+        </button>
       </div>
       {/* <Image
         className='img-banner'

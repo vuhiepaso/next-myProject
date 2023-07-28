@@ -1,8 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 button,
 [type='button'],
 [type='reset'],
@@ -10,10 +8,10 @@ button,
   background-color: #00152912;
 }
 body {
-    
-
+  .frame-layout {
+    min-height: 100vh;
+  }
 }
-.container{
+.container {
   margin: auto;
 }
-

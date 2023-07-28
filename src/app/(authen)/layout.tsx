@@ -9,7 +9,7 @@ type Props = {
 }
 export default function RootLayout({ children }: Props) {
   return (
-    <Layout>
+    <Layout className='frame-layout'>
       <Header />
       <Layout hasSider>
         <Content className='container'>
