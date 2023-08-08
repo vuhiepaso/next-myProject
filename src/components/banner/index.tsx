@@ -8,10 +8,9 @@ function AirConditional() {
         <h2 className='text-3xl'>Name </h2>
         <div>This is ...</div>
         <div>Description this is ...</div>
-
-        <button className='btn-banner mt-4'>
-          <Link href='/login'>Go To Login Now</Link>
-        </button>
+        <Link href='/login'>
+          <button className='btn-banner mt-4'>Login</button>
+        </Link>
       </div>
       {/* <Image
         className='img-banner'

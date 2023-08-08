@@ -4,9 +4,14 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input } from 'antd'
 import Link from 'next/link'
 
+import { APILogin } from '@/API/auth'
+
 export default function Login() {
   const onFinish = (values: any) => {
-    console.log('Received values of form: ', values)
+    APILogin(values).then((response) => {
+      console.log('response', response)
+    })
+    console.log('Received values of form: auth ', values)
   }
   return (
     <Template>
@@ -23,12 +28,12 @@ export default function Login() {
           onFinish={onFinish}
         >
           <Form.Item
-            name='username'
-            rules={[{ required: true, message: 'Please input your Username!' }]}
+            name='email'
+            rules={[{ required: true, message: 'Please input your email!' }]}
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
-              placeholder='Username'
+              placeholder='email'
             />
           </Form.Item>
           <Form.Item

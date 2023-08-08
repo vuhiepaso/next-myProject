@@ -6,7 +6,7 @@ function Header() {
   return (
     <Template>
       <div className='header flex items-center'>
-        <div className='logo container'>
+        <div className='logo container px-2'>
           <span className='first'>N</span> H H
         </div>
       </div>
